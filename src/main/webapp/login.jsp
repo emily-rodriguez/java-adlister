@@ -18,12 +18,13 @@
     <title>Login</title>
 </head>
 <body>
-
-<form action="/login.jsp" method="POST">
-    Username: <input name="username"/>
-    Password: <input type="password" name="password"><br>
-    <input type="submit" value="Login">
-</form>
+<div id="login-input">
+    <form action="/login.jsp" method="POST">
+        Username: <input class="form-control" name="username"/>
+        Password: <input class="form-control" type="password" name="password"><br>
+        <button class="btn btn-success" type="submit">Login</button>
+    </form>
+</div>
 
 
 <%--<p>"username" parameter: ${param.username}</p>--%>

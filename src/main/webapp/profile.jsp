@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Welcome to your profile page</h1>
+<h1 id="welcome-banner">Welcome to your profile page</h1>
 
 
 </body>

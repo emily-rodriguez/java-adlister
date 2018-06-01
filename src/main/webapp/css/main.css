@@ -22,3 +22,21 @@ a:active {
 a {
     font-family: 'Poppins', sans-serif;
 }
+
+nav {
+    margin-bottom: 50px;
+}
+
+#login-input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+   width: 100%;
+}
+
+#welcome-banner {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+}
