@@ -10,7 +10,8 @@
         response.sendRedirect("http://localhost:8080/login.jsp");
     }
 }
-%>d
+%>
+<%@ include file="partials/navbar.jsp" %>
 
 <html>
 <head>
