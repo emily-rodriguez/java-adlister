@@ -16,7 +16,6 @@
     <jsp:include page="partials/navbar.jsp" >
         <jsp:param name="title" value="Please Log In"></jsp:param>
     </jsp:include>
-    <title>Login</title>
 </head>
 <body>
 <div id="login-input">
