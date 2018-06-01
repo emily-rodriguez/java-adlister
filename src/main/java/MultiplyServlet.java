@@ -5,19 +5,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AddServlet", urlPatterns = "/addition")
-public class AddServlet extends HttpServlet {
+@WebServlet(name = "MultiplyServlet", urlPatterns = "/multiplication")
+public class MultiplyServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/get-summands.jsp").forward(request, response);
+        request.getRequestDispatcher("/get-operands.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int summand1 = Integer.parseInt(request.getParameter("summand1"));
-        int summand2 = Integer.parseInt(request.getParameter("summand2"));
-        int sum = summand1 + summand2;
-        request.setAttribute("sum", sum);
-        request.getRequestDispatcher("/display-sum.jsp").forward(request, response);
+        int operand1 = Integer.parseInt(request.getParameter("operand1"));
+        int operand2 = Integer.parseInt(request.getParameter("operand2"));
+        int product = operand1 * operand2;
+        request.setAttribute("product", product);
+        request.getRequestDispatcher("/display-product.jsp").forward(request, response);
     }
 
 }

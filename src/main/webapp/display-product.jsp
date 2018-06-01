@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1>The sum of your two numbers is: ${sum}</h1>
+<h1>The product of your two numbers = ${product}</h1>
 
 </body>
 </html>
