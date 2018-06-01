@@ -2,10 +2,15 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        body {
+            background-color: ${FavColor};
+        }
+    </style>
 </head>
 <body>
 
- <h1>Well, howdy, ${Name}!</h1>
+ <h1>Here's your favorite color!</h1>
 
 </body>
 </html>
