@@ -7,12 +7,14 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
+    int counter = 0;
+    String message = "";
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/login.jsp").forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String message = "";
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username.equals("admin") && password.equals("password")) {
@@ -20,6 +22,13 @@ public class LoginServlet extends HttpServlet {
         } else {
             message = "Username and/or password is incorrect";
             request.setAttribute("message", message);
+            counter += 1;
+            request.setAttribute("counter", counter);
+            if (counter >= 2) {
+//                message = "Too many login attempts! Try again later";
+//                request.setAttribute("message", message);
+                request.getRequestDispatcher("/locked-out.jsp").forward(request,response);
+            }
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }
     }
