@@ -23,3 +23,24 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        String username = request.getParameter("username");
+//        String password = request.getParameter("password");
+//        if (username.equals("admin") && password.equals("password")) {
+//            response.sendRedirect("/profile");
+//        } else {
+//            message = "Username and/or password is incorrect";
+//            request.setAttribute("message", message);
+//            counter += 1;
+//            request.setAttribute("counter", counter);
+//            if (counter >= 2) {
+////                message = "Too many login attempts! Try again later";
+////                request.setAttribute("message", message);
+//                request.getRequestDispatcher("/locked-out.jsp").forward(request,response);
+//            }
+//            request.getRequestDispatcher("/login.jsp").forward(request,response);
+//        }
+//    }
+//}
+
