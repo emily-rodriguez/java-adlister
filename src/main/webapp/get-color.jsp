@@ -8,7 +8,7 @@
 <form action="/pickcolor" method="POST">
     <div class="form-group">
         <label for="color">Please enter your favorite color</label>
-        <input id="color" name="color" type="text">
+        <input id="color" name="color" type="color">
     </div>
     <input type="submit" value="Submit color">
 </form>

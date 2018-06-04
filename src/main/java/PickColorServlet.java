@@ -18,5 +18,6 @@ public class PickColorServlet extends HttpServlet {
         favoriteColor = request.getParameter("color");
         request.setAttribute("FavColor", favoriteColor);
         request.getRequestDispatcher("/display-color.jsp").forward(request, response);
+
     }
 }

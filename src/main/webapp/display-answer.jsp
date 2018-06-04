@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1>The product of your two numbers = ${product}</h1>
+<h1>${operand1} ${operatorSymbol} ${operand2} equals ${answer}</h1>
 
 </body>
 </html>
