@@ -1,0 +1,42 @@
+a:link {
+    color: black
+}
+
+a:visited {
+    color: black
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+}
+
+.navbar-brand {
+    font-family: 'Raleway Dots', cursive;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    margin-bottom: 50px;
+}
+
+#login-input {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+   width: 100%;
+}
+
+#welcome-banner {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+}
