@@ -17,7 +17,6 @@
         <div class="card-body">
             <h5>${ad.title}</h5>
             <p>${ad.description}</p>
-            <p>${ad.userId}</p>
         </div>
     </div>
 </c:forEach>

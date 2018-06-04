@@ -40,3 +40,8 @@ nav {
     font-family: 'Pacifico', cursive;
     text-align: center;
 }
+
+.card {
+    margin: 20px;
+    align-content: center;
+}
