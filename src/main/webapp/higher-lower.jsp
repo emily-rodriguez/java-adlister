@@ -32,8 +32,8 @@
     <h2>Lower!</h2>
     <form action="/guess" method="POST">
         <div class="form-group">
-            <label for="guess">Guess again: </label>
-            <input id="guess" name="guess" type="number">
+            <label for="guess-again">Guess again: </label>
+            <input id="guess-again" name="guess" type="number">
         </div>
         <input type="submit" value="Guess">
     </form>
