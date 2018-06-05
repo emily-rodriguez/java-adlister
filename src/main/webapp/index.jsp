@@ -7,11 +7,7 @@
     </jsp:include>
 </head>
 <body>
-<<<<<<< HEAD
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-=======
-    <jsp:include page="WEB-INF/partials/navbar.jsp" />
->>>>>>> sessions-and-cookies-exercise
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
     </div>
