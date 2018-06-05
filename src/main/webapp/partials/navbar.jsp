@@ -6,10 +6,10 @@
         </div>
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" href="/WEB-INF/login">Login</a>
+                <a class="nav-link" href="/login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/WEB-INF/profile">Profile</a>
+                <a class="nav-link" href="/profile">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/ads">Ads</a>
