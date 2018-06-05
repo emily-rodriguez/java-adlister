@@ -12,7 +12,7 @@ public class AdsIndexServlet extends HttpServlet {
         List<Ad> ads = DaoFactory.getAdsDao().all();
         request.setAttribute("ads", ads);
         if (request.getSession().getAttribute("user") != null) {
-            request.getRequestDispatcher("/ads/index.jsp").forward(request, response);
+            request.getRequestDispatcher("./WEB-INF/ads/index.jsp").forward(request, response);
         } else {
             response.sendRedirect("/login");
         }

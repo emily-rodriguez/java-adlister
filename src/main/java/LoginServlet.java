@@ -12,9 +12,10 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
-        } else {
-            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+            return;
         }
+        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+
     }
 
 
