@@ -1,3 +1,7 @@
+body {
+    background-image: url("../img/what-the-hex.png");
+}
+
 a:link {
     color: black
 }
@@ -15,7 +19,7 @@ a:active {
     color: blue;
 }
 
-.navbar-brand {
+.navbar-brand, #login-message {
     font-family: 'Raleway Dots', cursive;
 }
 

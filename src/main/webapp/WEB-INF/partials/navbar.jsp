@@ -7,12 +7,12 @@
             <a class="navbar-brand" href="/">Adlister</a>
         </div>
         <ul class="nav nav-pills">
-            <c:if test="${user == null}">
+            <c:if test="${sessionScope.user == null}">
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
             </c:if>
-            <c:if test="${user != null}">
+            <c:if test="${sessionScope.user != null}">
                 <li class="nav-item">
                     <a class="nav-link" href="/profile">Profile</a>
                 </li>
