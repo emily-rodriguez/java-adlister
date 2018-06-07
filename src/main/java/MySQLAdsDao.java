@@ -1,4 +1,5 @@
 import java.sql.*;
+
 import com.mysql.jdbc.Driver;
 
 import java.util.ArrayList;
@@ -17,34 +18,36 @@ public class MySQLAdsDao implements Ads {
                 config.getPassword()
             );
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Cannot obtain database connection", e);
         }
     }
 
 
     @Override
     public List<Ad> all(){
-        List<Ad> ads = new ArrayList<>();
-        long id;
-        long user_id;
-        String title;
-        String description;
         try {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
-            while(rs.next()) {
-                id = rs.getLong("id");
-                user_id = rs.getLong("user_id");
-                title = rs.getString("title");
-                description = rs.getString("description");
-
-                Ad ad = new Ad(id, user_id, title, description);
-                ads.add(ad);
-            }
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM ads");
+            List<Ad> adsFromDB = createAdsFromDB(resultSet);
+            return adsFromDB;
         } catch (SQLException e) {
             throw new RuntimeException("Something went wrong", e);
         }
+    }
+
+    private List<Ad> createAdsFromDB(ResultSet rs) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
+        while(rs.next()) {
+            long id = rs.getLong("id");
+            long user_id = rs.getLong("user_id");
+            String title = rs.getString("title");
+            String description = rs.getString("description");
+
+            Ad ad = new Ad(id, user_id, title, description);
+            ads.add(ad);
+        }
         return ads;
+
     }
 
     @Override
