@@ -12,11 +12,11 @@
 <c:forEach var="ad" items="${ads}">
     <div class="card">
         <div class="card-header">
-            Ad # ${ad.id}
+            Ad # <c:out value="${ad.id}"/>
         </div>
         <div class="card-body">
-            <h5>${ad.title}</h5>
-            <p>${ad.description}</p>
+            <h5><c:out value="${ad.title}"/></h5>
+            <p><c:out value="${ad.description}"/></p>
         </div>
     </div>
 </c:forEach>
