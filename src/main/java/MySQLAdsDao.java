@@ -62,4 +62,16 @@ public class MySQLAdsDao implements Ads {
                 throw new RuntimeException("Could not create ad.", e);
         }
     }
+
+//    public void update(Ad ad) {
+//        try {
+//            String sql = "UPDATE ads SET user_id=?, title=?, description=? WHERE id=?";
+//            PreparedStatement statement = connection.prepareStatement(sql);
+//            statement.setString(1, (ad.getUserId(), Statement.RETURN_GENERATED_KEYS)
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Could not update ad.", e);
+//        }
+//    }
+
+
 }
