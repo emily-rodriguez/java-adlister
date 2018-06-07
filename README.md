@@ -4,11 +4,11 @@ This is a Java Servlet Application that is a bare-bones craigslist clone.
 
 #Setup
 
-In order to run this application, you'll need to create a 'Config" class. 
+In order to run this application, you'll need to create a 'dao.Config" class. 
 It should look like this:
 
 ```java
-public class Config {
+public class dao.Config {
     private String url = "jdbc:mysql://localhost/adlister_db?serverTimezone=UTC&useSSL=false";
     private String user = "USER";
     private String password = "PASSWORD";

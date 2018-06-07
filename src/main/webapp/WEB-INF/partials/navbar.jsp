@@ -13,18 +13,6 @@
                 </li>
             </c:if>
             <c:if test="${sessionScope.user != null}">
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ads/create">Create Ad</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ads">Ads</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
             </c:if>
         </ul>
     </div><!-- /.navbar-collapse -->

@@ -1,6 +1,9 @@
+package com.codeup.adlister.dao;
+
 import java.sql.*;
 
 import com.mysql.jdbc.Driver;
+import com.codeup.adlister.models.Ad;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +80,7 @@ public class MySQLAdsDao implements Ads {
         );
     }
 
-//    public void update(Ad ad) {
+//    public void update(models.Ad ad) {
 //        try {
 //            String sql = "UPDATE ads SET user_id=?, title=?, description=? WHERE id=?";
 //            PreparedStatement statement = connection.prepareStatement(sql);

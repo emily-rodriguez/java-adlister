@@ -12,7 +12,7 @@
 <c:forEach var="ad" items="${ads}">
     <div class="card">
         <div class="card-header">
-            Ad # ${ad.id}
+            com.codeup.adlister.models.Ad # ${ad.id}
         </div>
         <div class="card-body">
             <h5>${ad.title}</h5>
