@@ -40,7 +40,9 @@ public class LoginServlet extends HttpServlet {
         // TODO: make sure we find a user with that username
         // TODO: check the submitted password against what you have in your database
         boolean validAttempt = false;
-        if(user != null && user.getPassword().equals(password))
+        if(user != null && user.getPassword().equals(password)) {
+            validAttempt = true;
+        }
 
         if (validAttempt) {
             // TODO: store the logged in user object in the session, instead of just the username

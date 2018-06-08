@@ -43,14 +43,18 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public User findByUsername(String username) throws SQLException {
+    public User findByUsername(String username) {
         String sql = "SELECT * FROM users WHERE username = ?";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        stmt.setString(1, username);
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, username);
 
-        ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();
 
-        return extractUser(rs);
+            return extractUser(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding user by username",e);
+        }
     }
 
 
