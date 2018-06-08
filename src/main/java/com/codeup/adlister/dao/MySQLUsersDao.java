@@ -1,13 +1,9 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
-import com.codeup.adlister.util.Password;
 import com.mysql.cj.jdbc.Driver;
-import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MySQLUsersDao implements Users {
 
@@ -65,10 +61,7 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
-
-
     }
-
 }
 
 
