@@ -32,8 +32,9 @@ public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> all(){
         try {
-            Statement stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM ads");
+            String sql = "SELECT * FROM ads";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet resultSet = stmt.executeQuery();
             List<Ad> adsFromDB = createAdsFromDB(resultSet);
             return adsFromDB;
         } catch (SQLException e) {
@@ -59,9 +60,10 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            Statement stmt = connection.createStatement();
-
             String sql = createInsertQuery(ad);
+
+            PreparedStatement stmt = connection.prepareStatement(sql);
+
             System.out.println("Preparing to run query: " + sql);
 
             stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
@@ -83,29 +85,29 @@ public class MySQLAdsDao implements Ads {
         );
     }
 
-    public void update(Ad ad) {
-        try {
-            String sql = "UPDATE ads SET user_id=?, title=?, description=? WHERE id=?";
-            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            statement.setLong(1, ad.getUserId());
-            statement.setString(2,ad.getTitle());
-            statement.setString(3, ad.getDescription());
-        } catch (SQLException e) {
-            throw new RuntimeException("Could not update ad.", e);
-        }
-    }
+//    public void update(Ad ad) {
+//        try {
+//            String sql = "UPDATE ads SET user_id=?, title=?, description=? WHERE id=?";
+//            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+//            statement.setLong(1, ad.getUserId());
+//            statement.setString(2,ad.getTitle());
+//            statement.setString(3, ad.getDescription());
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Could not update ad.", e);
+//        }
+//    }
 
-    public List<Ad> search(String searchTerm) throws SQLException {
-        String sql = "SELECT * FROM ads WHERE title LIKE '%?%' OR description LIKE '%?%'";
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        stmt.setString(1, searchTerm);
-        stmt.setString(2, searchTerm);
+//    public List<Ad> search(String searchTerm) throws SQLException {
+//        String sql = "SELECT * FROM ads WHERE title LIKE '%?%' OR description LIKE '%?%'";
+//        PreparedStatement stmt = connection.prepareStatement(sql);
+//        stmt.setString(1, searchTerm);
+//        stmt.setString(2, searchTerm);
+//
+//        stmt.executeUpdate();
+//
+//        ResultSet rs = stmt.getResultSet();
+//
+//        return createAdsFromDB(rs);
 
-        stmt.executeUpdate();
-
-        ResultSet rs = stmt.getResultSet();
-
-        return createAdsFromDB(rs);
-
-    }
+//    }
 }
