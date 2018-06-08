@@ -3,6 +3,7 @@ package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
 
+import com.codeup.adlister.util.Password;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletException;
@@ -28,17 +29,14 @@ public class RegisterServlet extends HttpServlet {
         boolean validAttempt = (util.isNotBlank(username) && util.isNotBlank(email) && util.isNotBlank(password) & password.equals(passwordConfirmation));
         // validate input
 
-        if (validAttempt) {
-            User user = new User(username, email, password);
-            DaoFactory.getUsersDao().insert(user);
-            request.getSession().setAttribute("usernameDisplay", util.capitalize(username));
-            response.sendRedirect("/profile");
+        if (!validAttempt) {
+            response.sendRedirect("/register");
             return;
         }
         String message = "Invalid input, please try again";
         request.setAttribute("errorMessage", message);
-
-        request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request,response);
-
+        password = Password.hash(password);
+        DaoFactory.getUsersDao().insert(new User(username, email, password));
+        response.sendRedirect("/login");
     }
 }

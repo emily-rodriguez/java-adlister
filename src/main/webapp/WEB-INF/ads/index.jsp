@@ -17,6 +17,7 @@
         <div class="card-body">
             <h5><c:out value="${ad.title}"/></h5>
             <p><c:out value="${ad.description}"/></p>
+            <p><c:out value="${ad.userId}"/></p>
         </div>
     </div>
 </c:forEach>

@@ -8,7 +8,6 @@ public class User {
     private String email;
     private String password;
 
-    public User() {}
 
     public User(String username, String email, String password) {
         this.username = username;
@@ -52,6 +51,6 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = Password.hash(password);
+        this.password = password;
     }
 }

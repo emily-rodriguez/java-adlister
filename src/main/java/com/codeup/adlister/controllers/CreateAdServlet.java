@@ -21,12 +21,9 @@ public class CreateAdServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(request, response);
     }
 
-
-
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Ad ad = new Ad(
-            1, // for now we'll hardcode the user id
+            (long)request.getSession().getAttribute("id"),
             request.getParameter("title"),
             request.getParameter("description")
         );

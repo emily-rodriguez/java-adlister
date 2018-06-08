@@ -1,4 +1,4 @@
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,14 +12,9 @@
 </head>
 <body>
 
-<<<<<<< HEAD
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <h1>Welcome, <c:out value="${sessionScope.user.username}"/>!</h1>
     </div>
-=======
-<h1 id="welcome-banner">Welcome to your profile page ${sessionScope.usernameDisplay}</h1>
-
->>>>>>> user-input-exercise
 
 </body>
 </html>
