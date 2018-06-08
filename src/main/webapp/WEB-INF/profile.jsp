@@ -13,7 +13,7 @@
 <body>
 
     <div class="container">
-        <h1>Welcome, <c:out value="${sessionScope.user.username}"/>!</h1>
+        <h1 id="welcome-banner">Welcome, <c:out value="${sessionScope.user.username}"/>!</h1>
     </div>
 
 </body>

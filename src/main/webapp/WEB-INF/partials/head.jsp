@@ -4,7 +4,7 @@
 <head>
     <title>${param.title}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Poppins|Raleway+Dots" rel="stylesheet"></head>
 <body>
 <%--<h1>head included</h1>--%>
