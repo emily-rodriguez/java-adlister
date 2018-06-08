@@ -84,5 +84,10 @@ public class MySQLUsersDao implements Users {
         String hash = BCrypt.hashpw(password, BCrypt.gensalt(numberOfRounds));
         return hash;
     }
+
+    public boolean comparePassword(String password, String hash) {
+        return BCrypt.checkpw(password, hash);
+    }
 }
+
 
