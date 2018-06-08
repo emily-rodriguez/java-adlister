@@ -17,7 +17,7 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 =======
-<h1 id="welcome-banner">Welcome to your profile page ${sessionScope.user}</h1>
+<h1 id="welcome-banner">Welcome to your profile page ${sessionScope.usernameDisplay}</h1>
 
 >>>>>>> user-input-exercise
 

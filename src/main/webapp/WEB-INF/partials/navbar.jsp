@@ -11,6 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
             </c:if>
             <c:if test="${sessionScope.user != null}">
                 <li class="nav-item">

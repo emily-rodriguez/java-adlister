@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.dao.MySQLUsersDao;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
 import org.apache.commons.lang3.StringUtils;
 
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
@@ -44,7 +45,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        boolean validAttempt = password.equals(user.getPassword());
+        boolean validAttempt = Password.check(password, user.getPassword());
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
